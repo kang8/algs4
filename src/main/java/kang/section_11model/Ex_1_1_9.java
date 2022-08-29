@@ -15,9 +15,8 @@ public class Ex_1_1_9 {
     private static String toBinaryString(int n) {
         String result = "";
 
-        for (; n > 0; n /= 2) {
-            int i = n % 2;
-            result = i + result;
+        for (; n > 0; n >>>= 1) {
+            result = (n & 1) + result;
         }
 
         return result;

@@ -1,5 +1,14 @@
 package kang.section_11model;
 
+/**
+ * What do each of the following print?
+ * <pre>{@code
+ * a. System.out.println('b');
+ * b. System.out.println('b' + 'c');
+ * c. System.out.println((char) ('a' + 4));
+ * }</pre>
+ * Explain each outcome.
+ */
 public class Ex_1_1_8 {
     public static void main(String[] args) {
         System.out.println('b'); // b
@@ -11,6 +20,5 @@ public class Ex_1_1_8 {
         使用来 `(char)` 强制符来转换成字符
          */
         System.out.println((char) ('a' + 4)); // e
-
     }
 }

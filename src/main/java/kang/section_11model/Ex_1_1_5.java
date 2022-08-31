@@ -14,6 +14,10 @@ package kang.section_11model;
 import algs4.StdIn;
 import algs4.StdOut;
 
+/**
+ * Write a code fragment that prints true if the double variables x and y are both strictly
+ * between 0 and 1 and false otherwise.
+ */
 public class Ex_1_1_5 {
     public static void main(String[] args) {
         double x = StdIn.readDouble();

@@ -7,32 +7,25 @@ import algs4.StdRandom;
  * Write a code fragment that prints the contents of a two-dimensional boolean
  * array, using * to represent true and a space to represent false. Include row
  * and column numbers.
+ *
+ * @Tips: 可以使用 {@link StdOut#printf(String, Object...)} 中的 format 来减轻格式化负担
  */
 public class Ex_1_1_11 {
     public static void main(String[] args) {
         boolean[][] arr = getRandomBooleanArray(10, 10);
 
-        for (int i = 0; i < arr.length; i++) {
-            if (i == 0) {
-                StdOut.print("  ");
-                for (int x = 0; x < arr[i].length; x++) {
-                    StdOut.print((x + 1) + " ");
-                }
-                StdOut.println();
-            }
-            for (int j = 0; j < arr[i].length; j++) {
-                if (j == 0) {
-                    StdOut.print(i + 1 + " ");
-                }
+        StdOut.printf("%6d", 1);
+        for (int x = 1; x < arr.length; x++) {
+            StdOut.printf("%3d", x + 1);
+        }
+        StdOut.println();
 
-                StdOut.print((arr[i][j] ? "* " : "  "));
-                if (j == arr[i].length - 1) {
-                    if (i == arr.length - 1) {
-                        continue;
-                    }
-                    StdOut.println();
-                }
+        for (int i = 0; i < arr.length; i++) {
+            StdOut.printf("%3d", i + 1);
+            for (int j = 0; j < arr[i].length; j++) {
+                StdOut.printf("%3s", (arr[i][j] ? "*" : " "));
             }
+            StdOut.println();
         }
     }
 

@@ -51,17 +51,15 @@ public class Ex_1_1_19 {
     }
 
     public static long fastF(int N) {
-        if (N == 0) return 0;
-        if (N == 1) return 1;
+        int a = 0;
+        int b = 1;
 
-        long[] arr = new long[N + 1];
-        arr[0] = 0;
-        arr[1] = 1;
-
-        for (int i = 2; i <= N; i++) {
-            arr[i] = arr[i - 2] + arr[i - 1];
+        for (int i = 0; i < N; i++) {
+            a = a + b;
+            b = a - b;
         }
-        return arr[N];
+
+        return a;
     }
 
 

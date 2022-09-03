@@ -49,14 +49,10 @@ public class Ex_1_1_23 {
 
             int hasFind = indexOf(bases, search);
 
-            if (isInWhitelist) {
-                if (hasFind != -1) {
-                    System.out.println(search);
-                }
-            } else {
-                if (hasFind == -1) {
-                    System.out.println(search);
-                }
+            if (hasFind == -1 && !isInWhitelist) {
+                System.out.println(search);
+            } else if (hasFind != -1 && isInWhitelist) {
+                System.out.println(search);
             }
         }
     }

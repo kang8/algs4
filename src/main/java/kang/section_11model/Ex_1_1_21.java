@@ -12,7 +12,7 @@ import algs4.StdOut;
  */
 public class Ex_1_1_21 {
 
-    private static final String FILE_NAME = "Ex_1_1_21.txt";
+    private static final String FILE_NAME = "Ex_1_1_21.txt"; // test file, in `resources/`
 
     public static void main(String[] args) {
         String[] lines = new In(FILE_NAME).readAllLines();

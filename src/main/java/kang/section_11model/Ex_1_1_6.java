@@ -2,6 +2,19 @@ package kang.section_11model;
 
 import algs4.StdOut;
 
+/**
+ * What does the following program print?
+ * <pre>{@code
+ * int f = 0;
+ * int g = 0;
+ * for (int i = 0; i<= 15; i++)
+ * {
+ *     StdOut.println(f);
+ *     f = f + g;
+ *     g = f - g;
+ * }
+ * }</pre>
+ */
 public class Ex_1_1_6 {
     public static void main(String[] args) {
         int f = 0;

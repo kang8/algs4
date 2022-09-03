@@ -1,3 +1,13 @@
+/******************************************************************************
+ * Compilation: mvn compile
+ * Execution: `java kang.section_11model.BinarySearch base_file < search_file` in `target/classes` directory
+ *
+ * % java kang.section_11model.BinarySearch tinyW.txt < tinyT.txt
+ * 50
+ * 99
+ * 13
+ ******************************************************************************/
+
 package kang.section_11model;
 
 import algs4.In;

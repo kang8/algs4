@@ -27,8 +27,8 @@ src
 
 ```bash
 mvn compile
-# or nvm compile -f your_local_pom.xml 
-# in order to use other jdk version 
+# or `nvm compile -f your_local_pom.xml` in order to use other jdk version
+# In this repo, you can use `mvn compile -f pom11.xml` to specify jdk 11.
 ```
 
 Maven built-in jdk-version is settled after installation, while it's not easy to modify. see same question below:

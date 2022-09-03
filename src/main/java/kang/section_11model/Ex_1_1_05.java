@@ -1,11 +1,11 @@
 /******************************************************************************
  * Compilation: mvn compile
- * Execution: `java kang.section_11model.Ex_1_1_5` in `target/classes` directory
+ * Execution: `java kang.section_11model.Ex_1_1_05` in `target/classes` directory
  *
- * % echo 0.4 0.7 | java kang.section_11model.Ex_1_1_5
+ * % echo 0.4 0.7 | java kang.section_11model.Ex_1_1_05
  * true
  *
- * % echo 0.4 1.6 | java kang.section_11model.Ex_1_1_5
+ * % echo 0.4 1.6 | java kang.section_11model.Ex_1_1_05
  * false
  ******************************************************************************/
 
@@ -18,7 +18,7 @@ import algs4.StdOut;
  * Write a code fragment that prints true if the double variables x and y are both strictly
  * between 0 and 1 and false otherwise.
  */
-public class Ex_1_1_5 {
+public class Ex_1_1_05 {
     public static void main(String[] args) {
         double x = StdIn.readDouble();
         double y = StdIn.readDouble();

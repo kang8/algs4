@@ -9,7 +9,7 @@ package kang.section_11model;
  * }</pre>
  * Explain each outcome.
  */
-public class Ex_1_1_8 {
+public class Ex_1_1_08 {
     public static void main(String[] args) {
         System.out.println('b'); // b
         /*

@@ -27,7 +27,12 @@ src
 
 ```bash
 mvn compile
+# or nvm compile -f your_local_pom.xml 
+# in order to use other jdk version 
 ```
+
+Maven built-in jdk-version is settled after installation, while it's not easy to modify. see same question below:
+[maven-uses-wrong-java-version](https://ask.fedoraproject.org/t/maven-uses-wrong-java-version-with-f35/17720)
 
 maven 会将编辑好的 `*.class` 以包名为目录放在 `target/classes/` 目录下，同样会将 `resources/` 中的文件编译到 `target/classes` 目录下。
 

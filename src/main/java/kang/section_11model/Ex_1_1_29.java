@@ -40,12 +40,11 @@ public class Ex_1_1_29 {
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
 
-            if ((mid > 0 && arr[mid] == key && arr[mid - 1] != key) || (mid == 0 && arr[mid] == key)) {
-                return mid;
-            }
-
-            if (arr[mid] >= key) {
+            if (arr[mid] > key) {
                 hi = mid - 1;
+            } else if (arr[mid] == key) {
+                if ((mid == 0) || (arr[mid - 1] != key)) return mid;
+                else hi = mid - 1;
             } else {
                 lo = mid + 1;
             }
@@ -61,12 +60,11 @@ public class Ex_1_1_29 {
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
 
-            if ((mid < arr.length && arr[mid] == key && arr[mid + 1] != key) || (mid == arr.length - 1 && arr[mid] == key)) {
-                return mid;
-            }
-
-            if (arr[mid] <= key) {
+            if (arr[mid] < key) {
                 lo = mid + 1;
+            } else if (arr[mid] == key) {
+                if (mid == arr.length - 1 || arr[mid + 1] != key) return mid;
+                else lo = mid + 1;
             } else {
                 hi = mid - 1;
             }
@@ -74,5 +72,4 @@ public class Ex_1_1_29 {
 
         return -1;
     }
-
 }

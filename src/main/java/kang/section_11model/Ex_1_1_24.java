@@ -25,9 +25,7 @@ public class Ex_1_1_24 {
         System.out.println("result: " + gcdOfSubtraction);
     }
 
-    private static int euclidOfModVersion(int p, int q) {
-        System.out.println(p + " " + q);
-
+    public static int euclidOfModVersion(int p, int q) {
         if (q == 0) return p;
 
         return euclidOfModVersion(q, p % q);

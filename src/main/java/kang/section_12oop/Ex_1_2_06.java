@@ -16,6 +16,11 @@ public class Ex_1_2_06 {
         String t = "ACTGACG";
 
         System.out.println(isCircularRotation(s, t));
+        System.out.println(isCircularRotationForInline(s, t));
+    }
+
+    private static boolean isCircularRotationForInline(String s, String t) {
+        return s.length() == t.length() && (s + s).contains(t);
     }
 
     private static boolean isCircularRotation(String s, String t) {

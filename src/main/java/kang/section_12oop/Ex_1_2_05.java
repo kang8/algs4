@@ -4,6 +4,12 @@ import java.util.Locale;
 
 /**
  * What dose the following code fragment print?
+ * <pre>{@code
+ * String s= "Hello World";
+ * s.toUpperCase();
+ * s.substring(6, 11);
+ * System.out.println(s);
+ * }</pre>
  *
  * @Answer: "Hello World". String objects are immutable -- string methods return
  * a new String object with the appropriate value(bue they do not change the value

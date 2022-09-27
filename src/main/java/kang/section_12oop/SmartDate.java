@@ -7,6 +7,10 @@ public class SmartDate {
 
     private final int[] DAYS = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
+    // Calendar from 12/31/1999 - Firday
+    private final String[] DAY_OF_WEEK = {"Friday", "Saturday", "Sunday", "Monday", "Tuesday",
+            "Wednesday", "Thursday"};
+
     public SmartDate(int m, int d, int y) {
         if (!isValid(m, d, y)) {
             System.out.println("Invalid date: " + m + "/" + d + "/" + y);
@@ -26,6 +30,38 @@ public class SmartDate {
 
     public int year() {
         return year;
+    }
+
+    /**
+     * Assume the date is in the 21st century.
+     *
+     * @return
+     */
+    public String dayOfTheWeek() {
+        int baseMonth = 1;
+        int baseYear  = 2000;
+
+        int days = 0;
+
+        while (baseYear < this.year) {
+            days += isLeapYear(baseYear) ? 366 : 365;
+
+            baseYear++;
+        }
+
+        while (baseMonth < this.month) {
+            if (baseMonth == 2) {
+                days += isLeapYear(this.year) ? 29 : 28;
+            } else {
+                days += DAYS[baseMonth - 1];
+            }
+
+            baseMonth++;
+        }
+
+        days += this.day;
+
+        return DAY_OF_WEEK[days % 7];
     }
 
     private boolean isValid(int m, int d, int y) {

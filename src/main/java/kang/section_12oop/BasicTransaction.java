@@ -26,4 +26,14 @@ public class BasicTransaction {
     public String toString() {
         return String.format("%-10s %10s %8.2f", who, when, amount);
     }
+
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null) return false;
+        if (this.getClass() != other.getClass()) return false;
+
+        BasicTransaction that = (BasicTransaction) other;
+
+        return (this.amount == that.amount) && (this.who.equals(that.who)) && (this.when.equals(that.when));
+    }
 }

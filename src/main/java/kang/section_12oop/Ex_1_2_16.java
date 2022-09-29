@@ -16,7 +16,7 @@ import algs4.StdOut;
  *     String toString() // string representation
  * }
  * }</pre>
- * You do not have to worry about testing for overflow (see Ex_1_2_17), but use as instance
+ * You do not have to worry about testing for overflow (see {@link Ex_1_2_17}), but use as instance
  * variables two long values that represent the numerator and denominator to limit the
  * possibility of overflow. Use Euclid's algorithm (see page 4) to ensure that the numerator and
  * denominator never have any common factors, Include a test client that exercises all of your

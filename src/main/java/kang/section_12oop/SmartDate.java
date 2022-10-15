@@ -20,6 +20,25 @@ public class SmartDate {
         this.year  = y;
     }
 
+    /**
+     * Parse date with 5/22/1939, month/day/year
+     */
+    public SmartDate(String date) {
+        String[] split = date.split("/");
+
+        if (split.length != 3) {
+            throw new IllegalArgumentException("Invalid date: " + date);
+        }
+
+        month = Integer.parseInt(split[0]);
+        day  = Integer.parseInt(split[1]);
+        year = Integer.parseInt(split[2]);
+
+        if (!isValid(month, day, year)) {
+            throw new IllegalArgumentException("Invalid date: " + date);
+        }
+    }
+
     public int month() {
         return month;
     }

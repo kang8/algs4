@@ -11,6 +11,18 @@ public class BasicTransaction {
         this.amount = amount;
     }
 
+    BasicTransaction(String transaction) {
+        String[] split = transaction.split("\\s+");
+
+        if (split.length != 3) {
+            throw new IllegalArgumentException("Invalid transaction: " + transaction);
+        }
+
+        who = split[0];
+        when = new Date(split[1]);
+        amount = Double.parseDouble(split[2]);
+    }
+
     public String who() {
         return who;
     }

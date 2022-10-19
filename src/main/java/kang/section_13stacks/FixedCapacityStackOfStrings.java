@@ -1,6 +1,7 @@
 package kang.section_13stacks;
 
 import algs4.In;
+import kang.common.DataPath;
 
 public class FixedCapacityStackOfStrings {
     private String[] a;
@@ -33,7 +34,7 @@ public class FixedCapacityStackOfStrings {
     public static void main(String[] args) {
         FixedCapacityStackOfStrings fixedCapacity = new FixedCapacityStackOfStrings(100);
 
-        String[] strings = new In("tobe.txt").readAllStrings();
+        String[] strings = new In(DataPath.STACK).readAllStrings();
 
         for (String s : strings) {
             if (!s.equals("-")) {

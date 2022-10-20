@@ -9,6 +9,7 @@ public class FixedCapacityStackOfStrings {
 
     public FixedCapacityStackOfStrings(int cap) {
         a = new String[cap];
+        N = 0;
     }
 
     public void push(String item) {

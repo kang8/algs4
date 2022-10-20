@@ -1,7 +1,7 @@
 package kang.section_13stacks;
 
 /**
- * Write a stack client {@code Parentheses} that reads in a text stream from standard input and
+ * Write a stack client {@link Parentheses} that reads in a text stream from standard input and
  * uses a stack to determine whether its parentheses are properly balanced. For example. your
  * program should print true for {@code [()](){[()()]()} } and false for {@code [(]) }.
  */

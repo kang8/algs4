@@ -1,7 +1,5 @@
 package kang.section_13stacks;
 
-import java.util.Arrays;
-
 /**
  * Give the output printed by {@code java Stack} for the input
  * <pre>{@code

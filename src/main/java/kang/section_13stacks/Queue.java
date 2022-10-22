@@ -3,56 +3,66 @@ package kang.section_13stacks;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Stack<Item> implements Iterable<Item> {
-    private Node top;
+public class Queue<Item> implements Iterable<Item> {
+    private Node first;
+    private Node last;
     private int  N;
 
-    private class Node {
-        Item item;
-        Node next;
+    public Queue() {
+        first = null;
+        last  = null;
+        N     = 0;
     }
 
-    public Stack() {
-        top = null;
-        N   = 0;
-    }
+    public void enqueue(Item item) {
+        Node oldLast = last;
 
-    public void push(Item item) {
-        Node oldTop = top;
-        top = new Node();
+        last      = new Node();
+        last.item = item;
+        last.next = null;
 
-        top.item = item;
-        top.next = oldTop;
+        if (isEmpty()) {
+            first = last;
+        } else {
+            oldLast.next = last;
+        }
+
         N++;
     }
 
-    public Item pop() {
+    public Item dequeue() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Stack is empty.");
+            throw new NoSuchElementException("Queue is empty.");
         }
 
-        Item item = top.item;
-        top = top.next;
+        Item item = first.item;
+        first = first.next;
+
+        if (isEmpty()) {
+            last = null;
+        }
+
         N--;
 
         return item;
     }
 
-    public Item peek() {
-        return top.item;
-    }
-
     public boolean isEmpty() {
-        return top == null; // or N == 0
+        return first == null;
     }
 
     public int size() {
         return N;
     }
 
+    private class Node {
+        Item item;
+        Node next;
+    }
+
     @Override
     public Iterator<Item> iterator() {
-        return new LinkedIterator(top);
+        return new LinkedIterator(first);
     }
 
     private class LinkedIterator implements Iterator<Item> {

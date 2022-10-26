@@ -50,6 +50,16 @@ public class Stack<Item> implements Iterable<Item> {
         return N;
     }
 
+    public String toString() {
+        StringBuilder res = new StringBuilder();
+        for (Item item : this) {
+            res.append(item);
+            res.append(' ');
+        }
+        return res.toString();
+    }
+
+
     @Override
     public Iterator<Item> iterator() {
         return new LinkedIterator(top);

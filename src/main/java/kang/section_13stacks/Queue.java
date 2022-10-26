@@ -55,6 +55,15 @@ public class Queue<Item> implements Iterable<Item> {
         return N;
     }
 
+    public String toString() {
+        StringBuilder res = new StringBuilder();
+        for (Item item : this) {
+            res.append(item);
+            res.append(' ');
+        }
+        return res.toString();
+    }
+
     private class Node {
         Item item;
         Node next;

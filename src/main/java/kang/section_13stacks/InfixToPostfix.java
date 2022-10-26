@@ -1,3 +1,15 @@
+/******************************************************************************
+ * Compilation: mvn compile
+ * Execution: `java kang.section_13stacks.InfixToPostfix "infix_notation"` in `target/classes` directory
+ *
+ * % java kang.section_13stacks.InfixToPostfix "(2 + ((3 + 4) * (5 * 6)))"
+ * 2 3 4 + 5 6 * * +
+ *
+ * % java kang.section_13stacks.InfixToPostfix "(((5 + (7 * (1 + 1))) * 3) + (2 * (1 + 1)))"
+ * 5 7 1 1 + * + 3 * 2 1 1 + * +
+ ******************************************************************************/
+
+
 package kang.section_13stacks;
 
 import java.util.Objects;
@@ -86,5 +98,9 @@ public class InfixToPostfix {
         }
 
         return res;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(InfixToPostfix.toPostfix(args[0]));
     }
 }

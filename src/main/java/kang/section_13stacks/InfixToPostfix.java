@@ -48,6 +48,7 @@ public class InfixToPostfix {
                 }
             }
         }
+
         while (!operator.isEmpty()) {
             output.enqueue(operator.pop());
         }
@@ -76,25 +77,30 @@ public class InfixToPostfix {
     }
 
     private static String[] splitExpression(String infix) {
-        Queue<String> characterQueue = new Queue<>();
+        Queue<String> queue = new Queue<>();
 
         for (int i = 0; i < infix.length(); i++) {
             char c = infix.charAt(i);
             if (c == ' ') continue;
 
             int next = i;
-            while (isNumber(c) && isNumber(infix.charAt(++next))) {
-                characterQueue.enqueue(characterQueue.dequeue() + infix.charAt(next));
+            while (isNumber(c) && isNumber(infix.charAt(next + 1))) {
+                queue.enqueue(Character.toString(c) + infix.charAt(++next));
             }
 
-            characterQueue.enqueue(Character.toString(c));
+            if (i != next) {
+                i = next;
+                continue;
+            }
+
+            queue.enqueue(Character.toString(c));
         }
 
-        String[] res = new String[characterQueue.size()];
+        String[] res = new String[queue.size()];
         int      len = 0;
 
-        while (!characterQueue.isEmpty()) {
-            res[len++] = characterQueue.dequeue();
+        while (!queue.isEmpty()) {
+            res[len++] = queue.dequeue();
         }
 
         return res;

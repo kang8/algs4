@@ -61,7 +61,7 @@ public class Queue<Item> implements Iterable<Item> {
             res.append(item);
             res.append(' ');
         }
-        return res.toString();
+        return res.toString().trim();
     }
 
     private class Node {

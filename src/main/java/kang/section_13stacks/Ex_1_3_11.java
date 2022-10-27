@@ -1,7 +1,7 @@
 package kang.section_13stacks;
 
 /**
- * Write a program {@code EvaluatePostfix} that takes a postfix expression from standard input,
+ * Write a program {@link EvaluatePostfix} that takes a postfix expression from standard input,
  * evaluates it, and prints the value. Piping the output of your program from the previous
  * exercise to this program gives equivalent behavior to {@code Evaluate}.
  */

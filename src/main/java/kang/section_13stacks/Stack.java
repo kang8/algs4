@@ -56,9 +56,24 @@ public class Stack<Item> implements Iterable<Item> {
             res.append(item);
             res.append(' ');
         }
-        return res.toString();
+        return res.toString().trim();
     }
 
+    public static Stack<String> copy(Stack<String> stack) {
+        String[]      strings   = new String[stack.size()];
+        Stack<String> copyStack = new Stack<>();
+        int           len       = 0;
+
+        for (String str : stack) {
+            strings[len++] = stack.pop();
+        }
+
+        for (int i = strings.length - 1; i >= 0; i--) {
+            copyStack.push(strings[i]);
+        }
+
+        return copyStack;
+    }
 
     @Override
     public Iterator<Item> iterator() {

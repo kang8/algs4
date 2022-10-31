@@ -23,7 +23,8 @@ public class ResizingArrayQueueOfStrings {
         N++;
 
         a[last] = s;
-                  last = nextOne(last);
+
+        last = nextOne(last);
     }
 
     public String dequeue() {
@@ -56,19 +57,19 @@ public class ResizingArrayQueueOfStrings {
     }
 
     private void resize(int capacity) {
-        String[] newOne = new String[capacity];
+        String[] copy = new String[capacity];
 
         int len = 0;
 
         while (first != last) {
-            newOne[len++] = a[first];
-            first         = nextOne(first);
+            copy[len++] = a[first];
+            first       = nextOne(first);
         }
 
         first = 0;
         last  = len;
 
-        a = newOne;
+        a = copy;
     }
 
     private int nextOne(int index) {

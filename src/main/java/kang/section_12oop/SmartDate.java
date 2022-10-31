@@ -46,8 +46,7 @@ public class SmartDate {
 
         Queue<SmartDate> queue = new Queue<>();
         while (!in.isEmpty()) {
-            SmartDate item = new SmartDate(in.readString());
-            queue.enqueue(item);
+            queue.enqueue(new SmartDate(in.readString()));
         }
 
         int         size       = queue.size();

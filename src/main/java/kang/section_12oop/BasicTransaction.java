@@ -1,5 +1,8 @@
 package kang.section_12oop;
 
+import algs4.In;
+import kang.section_13stacks.Queue;
+
 public class BasicTransaction {
     private final String who;
     private final Date   when;
@@ -18,9 +21,27 @@ public class BasicTransaction {
             throw new IllegalArgumentException("Invalid transaction: " + transaction);
         }
 
-        who = split[0];
-        when = new Date(split[1]);
+        who    = split[0];
+        when   = new Date(split[1]);
         amount = Double.parseDouble(split[2]);
+    }
+
+    public static BasicTransaction[] readTransactions(String name) {
+        In in = new In(name);
+
+        Queue<BasicTransaction> queue = new Queue<>();
+        while (!in.isEmpty()) {
+            queue.enqueue(new BasicTransaction(in.readLine()));
+        }
+
+        int                size         = queue.size();
+        BasicTransaction[] transactions = new BasicTransaction[size];
+
+        for (int i = 0; i < size; i++) {
+            transactions[i] = queue.dequeue();
+        }
+
+        return transactions;
     }
 
     public String who() {

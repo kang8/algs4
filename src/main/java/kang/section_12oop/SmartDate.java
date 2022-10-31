@@ -1,5 +1,8 @@
 package kang.section_12oop;
 
+import algs4.In;
+import kang.section_13stacks.Queue;
+
 public class SmartDate {
     private final int month;
     private final int day;
@@ -8,8 +11,7 @@ public class SmartDate {
     private final int[] DAYS = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     // Calendar from 12/31/1999 - Firday
-    private final String[] DAY_OF_WEEK = {"Friday", "Saturday", "Sunday", "Monday", "Tuesday",
-            "Wednesday", "Thursday"};
+    private final String[] DAY_OF_WEEK = {"Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
 
     public SmartDate(int m, int d, int y) {
         if (!isValid(m, d, y)) {
@@ -31,12 +33,31 @@ public class SmartDate {
         }
 
         month = Integer.parseInt(split[0]);
-        day  = Integer.parseInt(split[1]);
-        year = Integer.parseInt(split[2]);
+        day   = Integer.parseInt(split[1]);
+        year  = Integer.parseInt(split[2]);
 
         if (!isValid(month, day, year)) {
             throw new IllegalArgumentException("Invalid date: " + date);
         }
+    }
+
+    public static SmartDate[] readDates(String name) {
+        In in = new In(name);
+
+        Queue<SmartDate> queue = new Queue<>();
+        while (!in.isEmpty()) {
+            SmartDate item = new SmartDate(in.readString());
+            queue.enqueue(item);
+        }
+
+        int         size       = queue.size();
+        SmartDate[] smartDates = new SmartDate[size];
+
+        for (int i = 0; i < size; i++) {
+            smartDates[i] = queue.dequeue();
+        }
+
+        return smartDates;
     }
 
     public int month() {
@@ -54,7 +75,7 @@ public class SmartDate {
     /**
      * Assume the date is in the 21st century.
      *
-     * @return
+     * @return day of week. e.g. monday
      */
     public String dayOfTheWeek() {
         int baseMonth = 1;

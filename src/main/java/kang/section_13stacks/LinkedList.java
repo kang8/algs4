@@ -14,6 +14,40 @@ public class LinkedList<Item> {
         node.next = null;
     }
 
+    /**
+     * Delete kth element
+     */
+    public void delete(int k) {
+        if (k <= 0) {
+            throw new IllegalArgumentException("Invalid index.");
+        }
+
+        if (k == 1) {
+            if (first.next == null){
+                throw new IllegalArgumentException("Can't Delete [" + k + "]th element.");
+            }
+
+            first = first.next;
+            return;
+        }
+
+        Node previous = first;
+
+        for (int i = 1; i < k - 1; i++) {
+            if (previous.next == null) {
+                throw new IllegalArgumentException("Can't Delete [" + k + "]th element.");
+            }
+
+            previous = previous.next;
+        }
+
+        if (previous.next == null) {
+            throw new IllegalArgumentException("Can't Delete [" + k + "]th element.");
+        }
+
+        previous.next = previous.next.next;
+    }
+
     private class Node {
         Item item;
         Node next;
@@ -44,6 +78,8 @@ public class LinkedList<Item> {
             node.next = temp;
             node      = temp;
         }
+
+        this.removeListNode();
     }
 
     public String toString() {
@@ -52,7 +88,7 @@ public class LinkedList<Item> {
         if (first == null) return str.toString();
 
         Node temp = first;
-        while (temp.next != null) {
+        while (temp != null) {
             str.append(temp.item).append(" ");
             temp = temp.next;
         }

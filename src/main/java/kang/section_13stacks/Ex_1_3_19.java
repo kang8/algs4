@@ -4,47 +4,16 @@ package kang.section_13stacks;
  * Give a code fragment that removes the last node in a linked list whose first node is first.
  */
 public class Ex_1_3_19 {
-    private static class Node<Item> {
-        Item item;
-        Node next;
-    }
-
     public static void main(String[] args) {
-        Node<Integer> first = new Node<>();
-        first.item = 1;
+        Integer[] integers = {1, 2, 3, 4, 5, 6};
 
-        Node<Integer> second = new Node<>();
-        second.item = 2;
-        first.next  = second;
+        LinkedList<Integer> linkedList = new LinkedList<>(integers);
 
-        Node<Integer> third = new Node<>();
-        third.item  = 3;
-        second.next = third;
+        System.out.println(linkedList);
 
-        Node<Integer> fourth = new Node<>();
-        fourth.item = 4;
-        third.next  = fourth;
+        linkedList.removeListNode();
 
-        Node<Integer> temp = first;
+        System.out.println(linkedList);
 
-        while (temp != null) {
-            System.out.println(temp.item);
-            temp = temp.next;
-        }
-
-        // region Answer
-        temp = first;
-        while (temp.next.next != null) {
-            temp = temp.next;
-        }
-        temp.next = null;
-        // endregion
-
-        temp = first;
-
-        while (temp != null) {
-            System.out.println(temp.item);
-            temp = temp.next;
-        }
     }
 }

@@ -23,7 +23,7 @@ public class LinkedList<Item> {
         }
 
         if (k == 1) {
-            if (first.next == null){
+            if (first.next == null) {
                 throw new IllegalArgumentException("Can't Delete [" + k + "]th element.");
             }
 
@@ -46,6 +46,16 @@ public class LinkedList<Item> {
         }
 
         previous.next = previous.next.next;
+    }
+
+    public boolean find(Item i) {
+        Node node = first;
+        while (node != null) {
+            if (node.item == i) return true;
+            node = node.next;
+        }
+
+        return false;
     }
 
     private class Node {

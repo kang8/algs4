@@ -1,8 +1,8 @@
 package kang.section_13stacks;
 
 /**
- * Write a method {@code delete()} that takes an int argument k and deletes the kth element in a
- * linked list, if it exists.
+ * Write a method {@link LinkedList#delete(int)} that takes an int argument k and deletes the kth element
+ * in a linked list, if it exists.
  */
 public class Ex_1_3_20 {
     public static void main(String[] args) {

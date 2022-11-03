@@ -64,8 +64,17 @@ public class LinkedList<Item> {
         node.next = node.next.next;
     }
 
+    private void insertAfter(Node<Item> node, Node<Item> append) {
+        if (node == null || append == null) {
+            return;
+        }
+
+        append.next = node.next;
+        node.next   = append;
+    }
+
     private static class Node<Item> {
-        Item item;
+        Item       item;
         Node<Item> next;
 
         Node(Item element, Node<Item> next) {
@@ -87,10 +96,11 @@ public class LinkedList<Item> {
         Node<Item> node = first;
 
         for (Item item : items) {
-            node.item = item;
             Node<Item> temp = new Node<>();
 
-            node.next = temp;
+            insertAfter(node, temp);
+
+            node.item = item;
             node      = temp;
         }
 

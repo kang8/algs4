@@ -42,26 +42,16 @@ public class CircularQueue<Item> {
             throw new IllegalArgumentException("Can't dequeue empty Queue.");
         }
 
-        Item item = last.item;
+        Node<Item> first = last.next;
+        Item item = first.item;
 
-        Node<Item> previousByLast = last;
-
-
-        // get previous node with last
-        while (previousByLast.next != last) {
-            previousByLast = previousByLast.next;
-        }
-
-        // Delete last node
-        if (previousByLast == last) { // length = 1;
+        if (first == last) {
             last = null;
         } else {
-            Node<Item> first = last.next;
-            previousByLast.next = first;
-            last                = previousByLast;
+            last.next = first.next;
         }
-
         length--;
+
         return item;
     }
 
@@ -75,7 +65,7 @@ public class CircularQueue<Item> {
 
     public String toString() {
         if (isEmpty()) {
-            return "";
+            return "Empty queue.";
         }
 
         StringBuilder str  = new StringBuilder();

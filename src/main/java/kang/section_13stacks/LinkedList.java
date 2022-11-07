@@ -65,6 +65,23 @@ public class LinkedList<Item> {
         }
     }
 
+    public void revert() {
+        Node<Item> current = first.next;
+        Node<Item> previous = first;
+        Node<Item> next;
+
+        while (current != null) {
+            next = current.next;
+
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        first.next = null;
+
+        first = previous;
+    }
+
     /**
      * Delete kth element
      */

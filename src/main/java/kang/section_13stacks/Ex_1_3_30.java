@@ -6,7 +6,7 @@ package kang.section_13stacks;
  *
  * @Note: Not pass argument with {@link LinkedList#revert()}
  * @Interactive solution: To accomplish this task, we maintain references to three consecutive
- * nodes in the linked list, reverse, first and second. At each iteration, we extract the node
+ * nodes in the linked list: reverse, first and second. At each iteration, we extract the node
  * first from the original linked list and insert it at the beginning of the reversed list. We
  * maintain the invariant that first is the first node of the original list, and reverse is the
  * first node of the resulting reversed list.
